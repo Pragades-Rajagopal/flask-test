@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Optional font styling */
+}
+
+h1,
+h2 {
+  text-align: center; /* Center align headings */
+}
+
+form {
+  margin-bottom: 20px; /* Space between form and table */
+}
+
+table {
+  border-collapse: collapse; /* Merge borders */
+  margin-top: 20px; /* Space above the table */
+}
+
+th,
+td {
+  border: 1px solid #000; /* Border for table cells */
+  padding: 8px; /* Padding inside cells */
+  text-align: center; /* Center align text in cells */
+}

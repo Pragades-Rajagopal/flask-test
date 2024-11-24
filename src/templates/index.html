@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flask Dropdown Example</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Select an Option</h1>
+    <form method="POST">
+      <label for="options">Choose an option:</label>
+      <select name="options" id="options">
+        <option value="" disabled selected>Select an option</option>
+        {% for option in options %}
+        <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+
+    {% if table_data %}
+    <h2>Selected Data:</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in table_data %}
+        <tr>
+          {% for item in row %}
+          <td>{{ item }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </body>
+</html>
