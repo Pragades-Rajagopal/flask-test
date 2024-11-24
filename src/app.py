@@ -8,17 +8,17 @@ options = [
     'Option 3',
 ]
 
-data = {
-    'Option 1': [['Row 1', 'Data 1A', 'Data 1B'], ['Row 2', 'Data 1C', 'Data 1D']],
-    'Option 2': [['Row 1', 'Data 2A', 'Data 2B'], ['Row 2', 'Data 2C', 'Data 2D']],
-    'Option 3': [['Row 1', 'Data 3A', 'Data 3B'], ['Row 2', 'Data 3C', 'Data 3D']]
-}
+data = [
+    { "name": "Alex", "age":30 }, 
+    { "name": "Max", "age":30 },
+    { "name": "George", "age":30 }
+]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     selected_option = request.form.get('options')
-    table_data = data.get(selected_option, []) if selected_option else []
-    return render_template('index.html', options=options, table_data=table_data)
+    # table_data = data.get(selected_option, []) if selected_option else []
+    return render_template('index.html', options=options, table_data=data)
 
 if __name__ == "__main__":
     app.run(debug=True)

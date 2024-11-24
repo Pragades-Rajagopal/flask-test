@@ -27,17 +27,15 @@
     <table border="1">
       <thead>
         <tr>
-          <th>Column 1</th>
-          <th>Column 2</th>
-          <th>Column 3</th>
+          <th>Name</th>
+          <th>Age</th>
         </tr>
       </thead>
       <tbody>
-        {% for row in table_data %}
+        {% for item in table_data %}
         <tr>
-          {% for item in row %}
-          <td>{{ item }}</td>
-          {% endfor %}
+          <td>{{ item.name }}</td>
+          <td>{{ item.age }}</td>
         </tr>
         {% endfor %}
       </tbody>
